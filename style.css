@@ -1,0 +1,116 @@
+
+body {
+    background-color: black;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+#gameBoard {
+    display: flex;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    text-align: center;
+    width: 16.6666%;
+}
+
+.cat,
+.clue {
+    background-color: #060CE9;
+    align-items: center;
+    border: 2px solid black;
+    display: flex;
+    height: 16.66666%;
+    justify-content: center;
+    width: 100%;
+}
+
+.cat {
+    color: white;
+    font-size: 24px;
+}
+
+.clue {
+    color: rgb(248, 212, 50);
+    font-size: 70px;
+    text-shadow: 3px 3px black;
+}
+
+#currentQ {
+    background-color: #060CE9;
+    height: 100vh;
+    position: fixed;
+    width: 100vh;
+}
+
+/* QUESTION OVERLAY START */
+.overlay {
+    height: 0%;
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #060CE9;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay p {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 72px;
+    text-shadow: 3px 3px black;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+
+  #questionText {
+      padding: 0 10%;
+  }
+
+  button {
+    background-color: #fff; /* Green */
+    border: 2px solid black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    color: #060CE9;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none; 
+  }
+  
+/* QUESTION OVERLAY END */
