@@ -1,4 +1,4 @@
-# Jeopary Game
+# Jeopardy Game
 
 [Live Page](https://esdidubs.github.io/jeopardy/)
 
