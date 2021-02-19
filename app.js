@@ -61,12 +61,12 @@ function randomCats() {
         chosenCats.push(possibleCats[cat]);
     }
 
-    fetchQuestions(`http://jservice.io/api/category?id=${chosenCats[0]}`);
-    fetchQuestions(`http://jservice.io/api/category?id=${chosenCats[1]}`);
-    fetchQuestions(`http://jservice.io/api/category?id=${chosenCats[2]}`);
-    fetchQuestions(`http://jservice.io/api/category?id=${chosenCats[3]}`);
-    fetchQuestions(`http://jservice.io/api/category?id=${chosenCats[4]}`);
-    fetchQuestions(`http://jservice.io/api/category?id=${chosenCats[5]}`);
+    fetchQuestions(`https://jservice.io/api/category?id=${chosenCats[0]}`);
+    fetchQuestions(`https://jservice.io/api/category?id=${chosenCats[1]}`);
+    fetchQuestions(`https://jservice.io/api/category?id=${chosenCats[2]}`);
+    fetchQuestions(`https://jservice.io/api/category?id=${chosenCats[3]}`);
+    fetchQuestions(`https://jservice.io/api/category?id=${chosenCats[4]}`);
+    fetchQuestions(`https://jservice.io/api/category?id=${chosenCats[5]}`);
 }
 
 // Fetches the data for the question
