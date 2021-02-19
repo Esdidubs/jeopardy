@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\
+    <title>Jeopardy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameBoard">
+        <div class="col">
+            <div class="cat" id="cat1">Category 1</div>
+            <div class="clue" id="cat1-clue1">$100</div>
+            <div class="clue" id="cat1-clue2">$200</div>
+            <div class="clue" id="cat1-clue3">$300</div>
+            <div class="clue" id="cat1-clue4">$400</div>
+            <div class="clue" id="cat1-clue5">$500</div>
+        </div>
+        <div class="col">
+            <div class="cat" id="cat2">Category 2</div>
+            <div class="clue" id="cat2-clue1">$100</div>
+            <div class="clue" id="cat2-clue2">$200</div>
+            <div class="clue" id="cat2-clue3">$300</div>
+            <div class="clue" id="cat2-clue4">$400</div>
+            <div class="clue" id="cat2-clue5">$500</div>
+        </div>
+        <div class="col">
+            <div class="cat" id="cat3">Category 3</div>
+            <div class="clue" id="cat3-clue1">$100</div>
+            <div class="clue" id="cat3-clue2">$200</div>
+            <div class="clue" id="cat3-clue3">$300</div>
+            <div class="clue" id="cat3-clue4">$400</div>
+            <div class="clue" id="cat3-clue5">$500</div>
+        </div>
+        <div class="col">
+            <div class="cat" id="cat4">Category 4</div>
+            <div class="clue" id="cat4-clue1">$100</div>
+            <div class="clue" id="cat4-clue2">$200</div>
+            <div class="clue" id="cat4-clue3">$300</div>
+            <div class="clue" id="cat4-clue4">$400</div>
+            <div class="clue" id="cat4-clue5">$500</div>
+        </div>
+        <div class="col">
+            <div class="cat" id="cat5">Category 5</div>
+            <div class="clue" id="cat5-clue1">$100</div>
+            <div class="clue" id="cat5-clue2">$200</div>
+            <div class="clue" id="cat5-clue3">$300</div>
+            <div class="clue" id="cat5-clue4">$400</div>
+            <div class="clue" id="cat5-clue5">$500</div>
+        </div>
+        <div class="col">
+            <div class="cat" id="cat6">Category 6</div>
+            <div class="clue" id="cat6-clue1">$100</div>
+            <div class="clue" id="cat6-clue2">$200</div>
+            <div class="clue" id="cat6-clue3">$300</div>
+            <div class="clue" id="cat6-clue4">$400</div>
+            <div class="clue" id="cat6-clue5">$500</div>
+        </div>
+    </div>
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <p id="questionText">test</p>
+            <p id="answerText"></p>
+            <button id="answerBtn">REVEAL</button>
+        </div>
+      </div>
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
