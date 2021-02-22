@@ -42,6 +42,7 @@ let finalCategories = {
     },
 }
 
+// These are the ids given by the API for most popular categories
 let possibleCats = [
     306, 136, 42, 780, 21, 105, 25, 103, 7, 442, 67, 227, 
     109, 114, 31, 176, 582, 1114, 508, 49, 561, 223, 770, 
@@ -51,14 +52,17 @@ let possibleCats = [
     37, 2537, 705, 1800, 897, 1195, 128
 ];
 
-randomCats()
+randomCats();
 
+// Chooses random categories for each game
 function randomCats() {
     let chosenCats = [];
 
+    // Grabs a random category and prevents duplicate
     for(let i=1; i<=6; i++){
         let cat = Math.floor(Math.random() * possibleCats.length);
         chosenCats.push(possibleCats[cat]);
+        possibleCats.splice(cat, 1);
     }
 
     fetchQuestions(`https://jservice.io/api/category?id=${chosenCats[0]}`);
@@ -131,29 +135,32 @@ function chooseQuestions(arr, title){
 
 // Pushes the questions to the finalCategories array
 function pushToCategory(arr, title){
-   for(let i=0; i<Object.keys(finalCategories).length; i++ ){
-       if(finalCategories[Object.keys(finalCategories)[i]].fulfilled === false){
-            finalCategories[Object.keys(finalCategories)[i]].questions = arr;
-            finalCategories[Object.keys(finalCategories)[i]].fulfilled = true;
-            finalCategories[Object.keys(finalCategories)[i]].name = title.toUpperCase();
-            break;
-       }
-   }
 
-   if(finalCategories[Object.keys(finalCategories)[5]].questions.length > 0) {
-    setUpBoard();
-   }
+    // breaks when it finds the column it needs to place itself in
+    for(let i=0; i<Object.keys(finalCategories).length; i++ ){
+        if(finalCategories[Object.keys(finalCategories)[i]].fulfilled === false){
+                finalCategories[Object.keys(finalCategories)[i]].questions = arr;
+                finalCategories[Object.keys(finalCategories)[i]].fulfilled = true;
+                finalCategories[Object.keys(finalCategories)[i]].name = title.toUpperCase();
+                break;
+        }
+    }
+
+    // Only calls the next function once all categories have been added
+    if(finalCategories[Object.keys(finalCategories)[5]].questions.length > 0) {
+        setUpBoard();
+    }
    
 }
 
-// 
+// Displays the category titles on the screen
 function setUpBoard(){
     for(let i=1; i<=6; i++){
         $(`#cat${i}`).text(finalCategories[Object.keys(finalCategories)[i-1]].name);
     }
 }
 
-// 
+// Runs when user clicks on a square
 $('#gameBoard').on('click', '.clue', function() {
 	let squareId = `#${$(this).attr('id')}`;    // ex: #cat1-clue2
     let num = squareId.substr(-1, 1);           // ex: 2
@@ -163,16 +170,18 @@ $('#gameBoard').on('click', '.clue', function() {
     if($(squareId).text() !== ''){
         displayQuestion(clue, squareId);
     }
-	
 });
 
-//
+// Displays the current question full screen
 function displayQuestion(clue, squareId) {
+
+    // Questions pops up full screen
     $('#questionText').text(clue[0].toUpperCase());
     document.getElementById("myNav").style.width = "100%";
     document.getElementById("myNav").style.height = "100%";
     $('#answerBtn').show();
 
+    // Displays answer to question and removes it from the board
     $('.overlay-content').on('click', '#answerBtn', function() {
         event.preventDefault;
         $('#answerText').text(clue[1].toUpperCase());
@@ -181,7 +190,7 @@ function displayQuestion(clue, squareId) {
     });
 }
 
-//
+// Closes the question to reveal board
 function closeNav(){
     document.getElementById("myNav").style.width = "0%";
     document.getElementById("myNav").style.height = "0%";
